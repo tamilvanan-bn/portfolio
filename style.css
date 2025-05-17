@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  background-color: #131316;
+  color: #ffffff;
+  font-family: "Roboto Mono", sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  min-height: 100vh;
+}
+
+li {
+  padding: 5px;
+}
+
+a {
+  color: white;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #131316;
+}
+
+.about {
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+@media screen and (max-width: 440px) {
+  .logos {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+
+.logo-svg {
+  height: 150px !important;
+  width: 100px !important;
+}
+
+.icon {
+  display: flex;
+  flex-direction: column;
+}
