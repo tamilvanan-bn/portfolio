@@ -57,7 +57,7 @@ footer {
 
 .logos {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 40px;
 }
 
@@ -66,11 +66,15 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
+  .logo-svg {
+    height: 90px !important;
+    width: 90px !important;
+  }
 }
 
 .logo-svg {
-  height: 150px !important;
-  width: 100px !important;
+  height: 150px;
+  width: 150px;
 }
 
 .icon {
