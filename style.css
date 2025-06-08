@@ -6,6 +6,17 @@ body {
   font-family: "Roboto Mono", sans-serif;
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.intro-svg {
+  display: none;
 }
 
 section {
@@ -17,6 +28,7 @@ section {
   margin-right: auto;
   width: 50%;
   min-height: 100vh;
+  padding: 2rem 0;
 }
 
 li {
@@ -34,6 +46,23 @@ footer {
   width: 100%;
   text-align: center;
   background-color: #131316;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.563rem;
+  padding: 0.5rem;
+}
+
+.footer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-text span {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .about {
@@ -45,14 +74,43 @@ footer {
 .hidden {
   opacity: 0;
   filter: blur(5px);
-  transform: translateX(-100%);
-  transition: all 1s;
+  transform: translateY(100px);
+  transition: all 0.8s ease-out;
 }
 
 .show {
   opacity: 1;
   filter: blur(0);
+  transform: translateY(0);
+}
+
+/* Add different animations for different sections */
+section:nth-child(odd).hidden {
+  transform: translateX(-100px);
+}
+
+section:nth-child(even).hidden {
+  transform: translateX(100px);
+}
+
+section:nth-child(odd).show,
+section:nth-child(even).show {
   transform: translateX(0);
+}
+
+/* Add animation for logos */
+.logo.hidden {
+  transform: scale(0.5);
+  opacity: 0;
+}
+
+.logo.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.logo {
+  transition: all 0.5s ease-out;
 }
 
 .logos {
@@ -61,14 +119,49 @@ footer {
   gap: 40px;
 }
 
-@media screen and (max-width: 440px) {
+.java-logo {
+  width: 105px !important;
+}
+
+.mongo-logo {
+  width: 195px !important;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    width: 90%;
+    padding: 4rem 0;
+  }
+
+  .intro-svg {
+    display: block;
+  }
+
+  .intro {
+    width: 70%;
+    padding: 0 0 !important;
+  }
+
+  .about {
+    width: 85%;
+  }
+
   .logos {
     grid-template-columns: 1fr 1fr;
     gap: 25px;
   }
+
   .logo-svg {
     height: 90px !important;
     width: 90px !important;
+  }
+
+  .java-logo {
+    width: 90px !important;
+  }
+
+  .mongo-logo {
+    width: 150px !important;
   }
 }
 
@@ -80,4 +173,22 @@ footer {
 .icon {
   display: flex;
   flex-direction: column;
+}
+
+.intro {
+  width: 70%;
+}
+
+.intro svg {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 2rem;
+}
+
+.intro svg circle {
+  stroke: #ffffff;
+}
+
+.intro svg rect {
+  fill: #ffffff;
 }
