@@ -165,6 +165,11 @@ section:nth-child(even).show {
   }
 }
 
+.logos-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .logo-svg {
   height: 150px;
   width: 150px;
