@@ -197,3 +197,9 @@ section:nth-child(even).show {
 .intro svg rect {
   fill: #ffffff;
 }
+
+.profile-picture {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+}
